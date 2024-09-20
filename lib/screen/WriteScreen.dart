@@ -128,7 +128,7 @@ class _NFCWriteScreenState extends State<NFCWriteScreen> {
           ...serialNumberBytes,
           ...atqaBytes,
           ...sakBytes,
-          ...atsBytes,
+          // ...atsBytes,
         ];
         Uint8List nfcDataBytes = Uint8List.fromList(nfcData);
         debugPrint('NFC Data: ${nfcDataBytes}');
@@ -153,7 +153,7 @@ class _NFCWriteScreenState extends State<NFCWriteScreen> {
               debugPrint('data to write: ${nfcData.length}');
               debugPrint('timout: ${nfcA.timeout} ms');
 
-              await nfcA.transceive(data:Uint8List.fromList(nfcData.sublist(0,16)));
+              await nfcA.transceive(data:Uint8List.fromList(nfcData));
               setState(() {
                 _nfcMessage = 'Data written successfully using NfcA!';
               });

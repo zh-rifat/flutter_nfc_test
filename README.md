@@ -18,3 +18,12 @@ flutter create nfc_write
   dependencies:
   nfc_manager: ^3.2.0
 ```
+
+
+
+
+# build apk
+
+```bash
+flutter build apk --split-per-abi
+```
